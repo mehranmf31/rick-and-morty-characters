@@ -17,12 +17,9 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "localforage": "^1.10.0",
-    "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.2",
-    "sort-by": "^1.2.0"
+    "react-router-dom": "^6.21.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.4",
@@ -57,6 +54,8 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-    "vitest": "^1.2.0"
+    "vitest": "^1.2.0",
+    "vite-tsconfig-paths": "^4.3.1",
+    "classnames": "^2.5.1"
   }
 }
