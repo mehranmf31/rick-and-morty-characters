@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./index.css";
+import "./styles/index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { CHARACTER_PAGE, MAIN_PAGE } from "./routes/app.ts";
 
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: MAIN_PAGE,
-        element: <h1>Characters</h1>,
+        element: <h1>Characters Page!</h1>,
       },
       {
         path: CHARACTER_PAGE(":id"),
