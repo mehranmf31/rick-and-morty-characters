@@ -1,0 +1,9 @@
+import { PageWrapper } from "@components/common";
+
+export function CharacterPage() {
+  return (
+    <PageWrapper>
+      <h1>Main Page!</h1>
+    </PageWrapper>
+  );
+}

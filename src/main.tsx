@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import "./styles/index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { CHARACTER_PAGE, MAIN_PAGE } from "./routes/app.ts";
+import { CharacterPage, MainPage } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -12,11 +13,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: MAIN_PAGE,
-        element: <h1>Characters Page!</h1>,
+        element: <MainPage />,
       },
       {
         path: CHARACTER_PAGE(":id"),
-        element: <h1>Character Page!</h1>,
+        element: <CharacterPage />,
       },
     ],
   },
