@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Image } from ".";
 
 const meta: Meta<typeof Image> = {
-  title: "common/image",
+  title: "common/Image",
   component: Image,
 };
 
