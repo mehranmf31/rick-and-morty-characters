@@ -25,32 +25,32 @@ export function CharacterCard({
           className="aspect-square object-cover w-full rounded-lg"
         />
         {!!episodesCount && (
-          <div className="absolute top-3 left-0 text-xs bg-green-800 text-white py-0.5 px-2 rounded-e-sm">
+          <div className="absolute top-3 left-0 bg-green-800 text-white py-0.5 px-2 rounded-e-sm">
             In {episodesCount} {episodesCount > 1 ? "episodes" : "episode"}
           </div>
         )}
       </div>
       <div className="p-2 flex flex-col justify-between w-7/12 sm:w-full">
-        <h2 className="font-black text-ellipsis text-nowrap overflow-hidden">
-          {name}
-        </h2>
-        <div
-          className={classNames("text-xs capitalize", {
-            "text-green-700": status === "alive",
-            "text-red-700": status === "dead",
-            "text-neutral-600": status === "unknown",
-          })}
-        >
-          {status}
+        <div>
+          <h2 className="text-xl font-black text-ellipsis text-nowrap overflow-hidden">
+            {name}
+          </h2>
+          <div
+            className={classNames("capitalize text-base", {
+              "text-green-700": status === "alive",
+              "text-red-700": status === "dead",
+              "text-neutral-600": status === "unknown",
+            })}
+          >
+            {status}
+          </div>
         </div>
 
         <div className="text-ellipsis text-nowrap overflow-hidden mt-3">
-          <span className="flex items-center text-neutral-600 text-xs">
+          <span className="flex items-center text-neutral-600 text-sm">
             last location:
           </span>
-          <span className="flex items-center text-sm font-semibold">
-            {location}
-          </span>
+          <span className="flex items-center font-semibold">{location}</span>
         </div>
       </div>
     </div>
