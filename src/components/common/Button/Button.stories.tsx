@@ -12,12 +12,21 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    children: "Click Me!",
+    children: "Click!",
   },
 };
 
 export const Loading: Story = {
   args: {
+    children: "Click!",
     isLoading: true,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: "Click!",
+    isLoading: true,
+    disabled: true,
   },
 };

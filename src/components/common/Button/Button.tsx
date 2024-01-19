@@ -9,13 +9,18 @@ export function Button({
   className,
   isLoading = false,
   children,
+  disabled,
   ...rest
 }: ButtonProps) {
   const buttonClassName = classNames(
     "bg-blue-600 text-white",
-    "px-3 py-2 rounded-lg text-sm",
+    "py-6 px-8 rounded-lg text-lg",
     "flex items-center justify-center",
-    "min-w-24 h-9",
+    "h-9",
+    {
+      "pointer-events-none": !!disabled || !!isLoading,
+      "bg-opacity-75": !!disabled,
+    },
     className,
   );
   return (
