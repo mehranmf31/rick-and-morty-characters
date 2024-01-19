@@ -37,9 +37,9 @@ export function CharacterCard({
           </h2>
           <div
             className={classNames("capitalize text-base", {
-              "text-green-700": status === "alive",
-              "text-red-700": status === "dead",
-              "text-neutral-600": status === "unknown",
+              "text-green-700": status.toLocaleLowerCase() === "alive",
+              "text-red-700": status.toLocaleLowerCase() === "dead",
+              "text-neutral-500": status.toLocaleLowerCase() === "unknown",
             })}
           >
             {status}
