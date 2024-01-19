@@ -19,6 +19,7 @@ type Story = StoryObj<typeof CharacterCard>;
 
 export const Default: Story = {
   args: {
+    id: 1,
     image: "https://picsum.photos/300/300",
     name: "Rick Sanches",
     location: "last location",

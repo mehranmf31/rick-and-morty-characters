@@ -3,6 +3,7 @@ import { CharacterCard } from ".";
 import { render, screen } from "@testing-library/react";
 
 const props = {
+  id: 1,
   image: "https://picsum.photos/300/300",
   name: "Rick Sanches",
   location: "mock location",
