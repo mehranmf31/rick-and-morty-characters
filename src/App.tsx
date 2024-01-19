@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-function App() {
+export function App() {
   return (
     <>
       <main>
@@ -9,5 +9,3 @@ function App() {
     </>
   );
 }
-
-export default App;
