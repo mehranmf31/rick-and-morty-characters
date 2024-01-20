@@ -24,7 +24,7 @@ export function Button({
     className,
   );
   return (
-    <button className={buttonClassName} {...rest}>
+    <button className={buttonClassName} disabled={disabled} {...rest}>
       {isLoading ? <Loading /> : children}
     </button>
   );
