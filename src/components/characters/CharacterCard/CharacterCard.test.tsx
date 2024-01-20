@@ -1,6 +1,7 @@
 import { expect, test } from "vitest";
 import { CharacterCard } from ".";
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 
 const props = {
   id: 1,
@@ -12,7 +13,11 @@ const props = {
 };
 
 test("render character card component image", () => {
-  render(<CharacterCard {...props} />);
+  render(
+    <MemoryRouter>
+      <CharacterCard {...props} />
+    </MemoryRouter>,
+  );
 
   const imageElement = screen.getByRole("img");
 
@@ -20,8 +25,12 @@ test("render character card component image", () => {
   expect(imageElement).toHaveAttribute("src", props.image);
 });
 
-test("render character card component image", () => {
-  render(<CharacterCard {...props} />);
+test("render character card component heading", () => {
+  render(
+    <MemoryRouter>
+      <CharacterCard {...props} />
+    </MemoryRouter>,
+  );
 
   const titleElement = screen.getByRole("heading");
 
