@@ -1,4 +1,5 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
+
 import { getCharacters } from "@lib/requests";
 import { CHARACTERS } from "@lib/constants/queryKey";
 
