@@ -8,8 +8,7 @@ export function MainPage() {
 
   return (
     <PageWrapper>
-      <h1 className="font-bold text-5xl">Rick And Morty Characters</h1>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 my-16">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
         {isLoading
           ? Array.from(Array(8).keys()).map((i) => <CardSkeleton key={i} />)
           : data &&
