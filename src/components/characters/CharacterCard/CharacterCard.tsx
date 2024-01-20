@@ -23,14 +23,14 @@ export function CharacterCard({
   return (
     <Link to={CHARACTER_PAGE(id)}>
       <div className="flex sm:flex-col gap-1 bg-white w-full p-1 rounded-xl">
-        <div className="flex items-center relative w-5/12 sm:w-full rounded-lg overflow-hidden">
+        <div className="flex items-center relative w-5/12 sm:w-full rounded-xl overflow-hidden">
           <Image
             src={image}
             alt={name}
             className="aspect-square object-cover w-full rounded-lg"
           />
           {!!episodesCount && (
-            <div className="absolute top-3 left-0 bg-green-800 text-white py-0.5 px-2 rounded-e-sm">
+            <div className="absolute top-3 left-0 bg-lime-600 text-white py-1 px-2 rounded-e-lg">
               In {episodesCount} {episodesCount > 1 ? "episodes" : "episode"}
             </div>
           )}
