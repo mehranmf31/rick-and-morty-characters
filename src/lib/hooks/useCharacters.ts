@@ -13,7 +13,7 @@ export const useCharacters = () => {
     error,
   } = useInfiniteQuery({
     queryKey: CHARACTERS,
-    queryFn: ({ pageParam = 1 }) => getCharacters(pageParam),
+    queryFn: ({ pageParam }) => getCharacters(pageParam),
     initialPageParam: 1,
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });

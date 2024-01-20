@@ -1,5 +1,6 @@
 import { CHARACTERS } from "@lib/constants/apiRoutes";
 import { get } from "@lib/utils/api";
+import { host } from "@lib/utils/config";
 import { CharacterType } from "@types";
 
 interface CharacterResponse {
@@ -12,7 +13,9 @@ export const getCharacters = (page: number): Promise<CharacterResponse> =>
     .then((response: any) => {
       return {
         list: response.results,
-        nextPage: page < response.info.pages ? page + 1 : null,
+        nextPage:
+          Number(response.info.next?.replace(host + CHARACTERS(""), "")) ||
+          null,
       };
     })
     .catch((response) => {
