@@ -12,7 +12,7 @@ export function CharacterDetails({
   episode,
 }: CharacterDetailsProps) {
   return (
-    <div className="flex max-sm:flex-col p-5 bg-white gap-8 rounded-xl xl:w-1/2 mx-auto">
+    <div className="flex max-sm:flex-col p-5 bg-white gap-8 rounded-xl mx-auto w-full">
       <div>
         <Image
           src={image}
