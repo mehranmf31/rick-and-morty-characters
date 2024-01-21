@@ -1,5 +1,7 @@
 import axios from "axios";
-import { host } from "./config";
+
+import { CONNECTION_ERROR } from "@lib/constants/errors";
+import { host } from "@lib/utils/config";
 
 export const api = axios.create({ baseURL: host });
 
@@ -8,7 +10,7 @@ api.interceptors.request.use(
     return config;
   },
   function (error) {
-    window.alert("Connection Error!");
+    window.alert(CONNECTION_ERROR);
     return Promise.reject(error);
   },
 );
