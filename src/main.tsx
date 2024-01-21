@@ -10,6 +10,7 @@ import "./styles/index.css";
 import { App } from "./App.tsx";
 import { CHARACTER_PAGE, MAIN_PAGE } from "./routes/app.ts";
 import { CharacterPage, MainPage } from "./pages";
+import { ErrorPage } from "pages/ErrorPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
         element: <CharacterPage />,
       },
     ],
+    errorElement: <ErrorPage />,
   },
 ]);
 
