@@ -1,10 +1,23 @@
 import { CharacterCard } from "@components/characters";
-import { Button, CardSkeleton, PageWrapper } from "@components/common";
+import { Button, CardSkeleton, Error, PageWrapper } from "@components/common";
+import { GENERAL_ERROR } from "@lib/constants/errors";
 import { useCharacters } from "@lib/hooks";
 
 export function MainPage() {
-  const { fetchNextPage, hasNextPage, isFetchingNextPage, data, isLoading } =
-    useCharacters();
+  const {
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    data,
+    isLoading,
+    isError,
+    error,
+  } = useCharacters();
+
+  if ((!data && !isLoading) || (isError && error))
+    return (
+      <Error message={error?.message || GENERAL_ERROR} className="mt-12" />
+    );
 
   return (
     <PageWrapper>

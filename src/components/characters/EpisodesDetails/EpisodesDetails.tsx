@@ -1,26 +1,28 @@
-import { LoadingWrapper } from "@components/common";
+import { Error, LoadingWrapper } from "@components/common";
 import { useEpisode } from "@lib/hooks";
-import { DetailRow } from "@components/characters";
-import { DetailTitle } from "../DetailTitle/DetailTitle";
+import { DetailRow, DetailTitle } from "@components/characters";
+import { GENERAL_ERROR } from "@lib/constants/errors";
 
 export interface EpisodeDetailsProps {
   list: string;
 }
 
 export function EpisodesDetails({ list }: EpisodeDetailsProps) {
-  const { data, isLoading } = useEpisode(list);
+  const { data, isLoading, isError, error } = useEpisode(list);
+
+  if (isLoading) return <LoadingWrapper />;
+
+  if (!data || (isError && error))
+    return (
+      <Error message={error?.message || GENERAL_ERROR} className="mt-12" />
+    );
 
   return (
     <>
-      {isLoading && <LoadingWrapper />}
-      {!!data && (
-        <>
-          <DetailTitle content={`Episodes (${data.length || 0})`} />
-          {data.map((item) => (
-            <DetailRow title={item.episode} content={item.name} />
-          ))}
-        </>
-      )}
+      <DetailTitle content={`Episodes (${data.length || 0})`} />
+      {data.map((item) => (
+        <DetailRow title={item.episode} content={item.name} />
+      ))}
     </>
   );
 }
