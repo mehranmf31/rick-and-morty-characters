@@ -9,7 +9,7 @@ export function App() {
           <img
             src="/logo480.png"
             alt="Rick and Morty logo"
-            className="xl:w-72"
+            className="w-72 xl:w-96 aspect-[3/1] object-contain"
           />
         </Link>
       </nav>
